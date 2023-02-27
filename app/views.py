@@ -15,7 +15,7 @@ from .db import get_db
 def home():
     results = anime_recommender.get_random_animes()
 
-    return render_template("home.html", results=zip(results['name'], results['image_url']))
+    return render_template("home.html", results=zip(results['name'], results['image_url'])) #Implement age verification - DoB with sign-up, and/or +18 consent
 
 
 @app.route("/about/")
@@ -40,7 +40,7 @@ def search(name=None):
             if results.empty:
                 return render_template("not_found.html")
             else:                
-                return render_template("search.html", results=zip(results['name'], results['image_url']))
+                return render_template("search.html", results=zip(results['name'], results['image_url'])) #Implement age verification - DoB with sign-up, and +18 consent
 
     return render_template("search.html")
 
